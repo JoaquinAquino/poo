@@ -1,0 +1,19 @@
+paradigma estructurado:
+
+Programa se divide en funciones con énfasis en
+abstracciones de procedimientos
+Enfoque Top-down
+No Permite Herencia
+No hay encapsulamiento
+Mejor para programas chicos
+Menos espacio en memoria
+
+paradigma orientado a objetos:
+
+Programa se divide en objetos con énfasis en
+abstracción de datos
+Enfoque Bottom-up
+Permite herencia ( + reutilización de código)
+Permite encapsulamiento
+Mejor para programas grandes (de la vida real)
+Más espacio en memoria
