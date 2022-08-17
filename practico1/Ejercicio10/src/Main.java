@@ -31,7 +31,7 @@ System.out.println("ingrese 1 si desea jugar o cualquier otro numero caso contra
  
 	 
 	 
-	 do
+	 do		 
 	 {System.out.println("ingrese 1 si va a apostar por el valor1 o 2 si va a apostar por el valor2");
 	 val= in.nextInt();	
 
@@ -48,6 +48,7 @@ System.out.println("ingrese 1 si desea jugar o cualquier otro numero caso contra
 	
 	System.out.println(val);
 	break;
+	
 	case 2:
 	 
 		if (n2>n1) { ganadas++;
@@ -68,10 +69,7 @@ System.out.println("ingrese 1 si desea jugar o cualquier otro numero caso contra
 	 
 	 
 	 
-	
-	 
-	 
-	 
+		 
 	 
 	 break;	
 	 

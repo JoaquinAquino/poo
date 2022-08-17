@@ -65,6 +65,7 @@ System.out.println("hubieron "+valor+" numeros repetidos");
 System.out.println("¿Quieres jugar de nuevo? s/n: ");
 rta= in.next();
 rta=rta.toUpperCase();
+
 System.out.println("respuesta "+rta);
 while (!rta.equals("S") || !rta.equals("N")) {
 	System.out.println("incorrecto,vuelva a ingresar");

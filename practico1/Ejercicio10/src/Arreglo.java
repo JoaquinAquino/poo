@@ -5,7 +5,7 @@ public class Arreglo {
 	Scanner in= new Scanner(System.in);
 	Random ran= new Random(); 
 
-private int [] array;
+	private int [] array;
 
 public Arreglo (){
 	super();	
