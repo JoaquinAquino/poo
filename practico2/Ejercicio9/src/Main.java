@@ -90,7 +90,8 @@ do {
 	}while(rta.equalsIgnoreCase("si"));
 	
 	familias.add(familia);
-	familia.limpiar();
+
+//----------------------------------------------	familia.getPersonas().clear();
  
 System.out.println("ingrese si si desea ingresar otra familia o cualquier otra cosa si no");	
 //in.nextLine();
@@ -103,28 +104,28 @@ int acumuladorPersonas =0;
 int acumuladorEdades= 0;
 int acumuladorTrabajadores=0;
 
-//for (int i = 0; i < familias.size(); i++) {
-//	acumuladorFamilias=acumuladorFamilias+1 ;
-//	acumuladorPersonas=acumuladorPersonas+ familias.get(i).totalPersonas();
-//	acumuladorEdades=acumuladorEdades+ familias.get(i).totalEdad();
-//	acumuladorTrabajadores= acumuladorTrabajadores+ familias.get(i).cantidadTrabajando();
-//	
-//
-//   }
-
 for (int i = 0; i < familias.size(); i++) {
 	acumuladorFamilias=acumuladorFamilias+1 ;
+	acumuladorPersonas=acumuladorPersonas+ familias.get(i).totalPersonas();
+	acumuladorEdades=acumuladorEdades+ familias.get(i).totalEdad();
+	acumuladorTrabajadores= acumuladorTrabajadores+ familias.get(i).cantidadTrabajando();
 	
-	for (int j = 0; j < familias.get(i).getPersonas().size(); j++) {
-		acumuladorPersonas= acumuladorPersonas+1;
-		
-		acumuladorEdades=acumuladorEdades+familias.get(i).getPersonas().get(j).getEdad();
-		if (familias.get(i).getPersonas().get(j).isTrabaja()==true) {
-			acumuladorTrabajadores=acumuladorTrabajadores+1;
-		}
-		
-	}
-}
+
+   }
+
+//for (int i = 0; i < familias.size(); i++) {
+//	acumuladorFamilias=acumuladorFamilias+1 ;
+//	
+//	for (int j = 0; j < familias.get(i).getPersonas().size(); j++) {
+//		acumuladorPersonas= acumuladorPersonas+1;
+//		
+//		acumuladorEdades=acumuladorEdades+familias.get(i).getPersonas().get(j).getEdad();
+//		if (familias.get(i).getPersonas().get(j).isTrabaja()==true) {
+//			acumuladorTrabajadores=acumuladorTrabajadores+1;
+//		}
+//		
+//	}
+//}
 System.out.println("Cantidad de familias censadas= "+acumuladorFamilias);
 System.out.println("cantidad de personas= "+acumuladorPersonas);
 System.out.println(("promedio de edad= "+ acumuladorEdades/acumuladorPersonas));

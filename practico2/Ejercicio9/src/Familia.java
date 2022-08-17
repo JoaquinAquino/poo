@@ -49,9 +49,7 @@ return  acumulador;
 }
 
 
-public void limpiar() {
-	personas.clear();
-}
+
 
 }
 
