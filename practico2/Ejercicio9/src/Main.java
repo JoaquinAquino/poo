@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.w3c.dom.css.ElementCSSInlineStyle;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -8,19 +10,20 @@ public class Main {
 
 		
 ArrayList<Familia> familias = new ArrayList<Familia>();
-Familia familia = new Familia();
+
 Scanner in = new Scanner(System.in);
 String rta,rta1;
-Persona persona= new Persona();
 int o=1,p=1;
 do {
 	System.out.println("FAMILIA "+o);
 	o=o+1;
+	
+	Familia familia = new Familia();
 	do {
 		System.out.println("              PERSONA "+p);
 		System.out.println("");
 		p=p+1;
-
+		Persona persona= new Persona();
 				System.out.println("ingrese el nombre");	
 				String nombre= in.nextLine();
 				persona.setNombre(nombre)	;
@@ -34,26 +37,11 @@ do {
 			    String sexo= in.nextLine();
 				persona.setSexo(sexo);
 				
-				int condicion;			
-//				  do { 
-//					 
-//					 System.out.println("ingrese el sexo <M/F>");	
-//					 int siono= in.nextInt();
-//					 
-//				     condicion=1;
-//				
-//				     switch (siono) {
-//					 case 'M': {persona.setEstudia(true);break;}
-//					 case 'F': {persona.setEstudia(false);break;}
-//					 default:
-//					         System.out.println("incorrecto");condicion=2;break;}
-//				
-//				}while(condicion != 1);
-//				
+				int condicion;							
 							
 				  do { 
 					 
-					 System.out.println("¿Estudia? 1 para si/2 para no");	
+					 System.out.println("�Estudia? 1 para si/2 para no");	
 					 int siono= in.nextInt();
 					 
 				     condicion=1;
@@ -69,17 +57,31 @@ do {
 				
 				
 				do {
-					 System.out.println("¿trabaja? 1 para si/2 para no");	
+					 System.out.println("�trabaja? 1 para si/2 para no");	
 					 int siono= in.nextInt();
 					 
 				     condicion=1;
 				
 				     switch (siono) {
 					 case 1: {persona.setTrabaja(true);break;}
-					 case 2: {persona.setTrabaja(false);break;}
+					 case 2: {persona.setTrabaja(false);
+					 if (edad>16) {
+						 System.out.println("Tiene permitido trabajar <si/no>");
+						 in.nextLine();
+						 rta= in.nextLine();
+						 
+					}
+					 break;}
 					 default:
 					         System.out.println("incorrecto");condicion=2;break;}
 				
+			       if (edad>17) {
+			    	   System.out.println("Tiene permitido manejar un vehiculo particular <si/no>");
+			    	   
+						 rta= in.nextLine();   
+			       }
+				
+			
 				}while(condicion != 1);
 				
 	familia.añadirPersona(persona);
@@ -129,7 +131,7 @@ for (int i = 0; i < familias.size(); i++) {
 System.out.println("Cantidad de familias censadas= "+acumuladorFamilias);
 System.out.println("cantidad de personas= "+acumuladorPersonas);
 System.out.println(("promedio de edad= "+ acumuladorEdades/acumuladorPersonas));
-System.out.println("Cantidad de personas que trabajas= "+ acumuladorTrabajadores);
+System.out.println("Cantidad de personas que trabajan= "+ acumuladorTrabajadores);
 
 
 }
