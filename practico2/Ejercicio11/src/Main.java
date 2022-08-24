@@ -6,9 +6,9 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
+
 		ArrayList<Familia> familias = new ArrayList<Familia>();
-System.out.println("holaaaaaaaaa");
+
 		Scanner in = new Scanner(System.in);
 		String rta,rta1;
 		int o=1,p=1;
@@ -16,7 +16,7 @@ System.out.println("holaaaaaaaaa");
 			System.out.println("FAMILIA "+o);
 			o=o+1;
 			Familia familia = new Familia();
-			
+
 			do {
 				System.out.println("              PERSONA "+p);
 				System.out.println("");
@@ -37,53 +37,62 @@ System.out.println("holaaaaaaaaa");
 				String sexo= in.nextLine();
 				persona.setSexo(sexo);
 
-				int condicion;							
-				
-				do { 
+										
+
+			
 
 					System.out.println("¿Estudia? 1 para si/2 para no");	
 					int siono= in.nextInt();
 
-					condicion=1;
+				
 
 					switch (siono) {
 					case 1: {persona.setEstudia(true);break;}
 					case 2: {persona.setEstudia(false);break;}
 					default:
-						System.out.println("incorrecto");condicion=2;break;}
+						System.out.println("incorrecto");break;}
 
-				}while(condicion != 1);
+			
 
 
 
-				do {
+				
 					System.out.println("¿trabaja? 1 para si/2 para no");	
-					int siono= in.nextInt();
+					siono= in.nextInt();
 
-					condicion=1;
+				
 
 					switch (siono) {
 					case 1: {persona.setTrabaja(true);break;}
 					case 2: {persona.setTrabaja(false);
 					if (edad>16) {
-						
-						System.out.println("Tiene permitido trabajar <si/no>");
-						in.nextLine();
-						rta= in.nextLine();
 
+						System.out.println("Tiene permitido trabajar <1 para si/2 para no>");
+						in.nextLine();
+						siono= in.nextInt();
+						switch (siono) {
+						case 1: {persona.setPermitidoTrabajar(true);break;}
+						case 2: {persona.setPermitidoTrabajar(false);break
+						;}
+						}
 					}
 					break;}
 					default:
-						System.out.println("incorrecto");condicion=2;break;}
+						System.out.println("incorrecto");break;}
 
 					if (edad>17) {
-						System.out.println("Tiene permitido manejar un vehiculo particular <si/no>");
+						System.out.println("Tiene permitido manejar un vehiculo particular <1 para si/2 para no>");
 
-						rta= in.nextLine();   
+						in.nextLine();
+						siono= in.nextInt();
+						switch (siono) {
+						case 1: {persona.setPermitidoManejar(true);break;}
+						case 2: {persona.setPermitidoManejar(false);break;}
+						}  
 					}
 
 
-				}while(condicion != 1);
+				
 
 				familia.añadirPersona(persona);
 
@@ -92,15 +101,14 @@ System.out.println("holaaaaaaaaa");
 				rta = in.nextLine();
 			}while(rta.equalsIgnoreCase("si"));
 
-			familias.add(familia);
+		
 
-			//----------------------------------------------	familia.getPersonas().clear();
 
 			System.out.println("ingrese si si desea ingresar otra familia o cualquier otra cosa si no");	
-			//in.nextLine();
+			
 			rta1 = in.nextLine();
 			p=1;
-			
+			familias.add(familia);
 		}while (rta1.equalsIgnoreCase("si"));
 
 		int acumuladorFamilias =0;
@@ -113,6 +121,8 @@ System.out.println("holaaaaaaaaa");
 			acumuladorPersonas=acumuladorPersonas+ familias.get(i).totalPersonas();
 			acumuladorEdades=acumuladorEdades+ familias.get(i).totalEdad();
 			acumuladorTrabajadores= acumuladorTrabajadores+ familias.get(i).cantidadTrabajando();
+			System.out.println("familia: "+ (i+1));
+		//	familias.get(i).devolverPersona();
 
 
 		}
@@ -130,8 +140,8 @@ System.out.println("holaaaaaaaaa");
 		//		
 		//	}
 		//}
-		System.out.println("Cantidad de familias censadas= "+acumuladorFamilias);
-		System.out.println("cantidad de personas= "+acumuladorPersonas);
+		System.out.println("Cantidad de familias censadas= "+(acumuladorFamilias));
+		System.out.println("cantidad de personas= "+(acumuladorPersonas));
 		System.out.println(("promedio de edad= "+ acumuladorEdades/acumuladorPersonas));
 		System.out.println("Cantidad de personas que trabajan= "+ acumuladorTrabajadores);
 

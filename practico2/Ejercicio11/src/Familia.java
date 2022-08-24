@@ -31,14 +31,8 @@ this.personas.add(persona);
 }
 
 public  int totalPersonas() {
-//	int acumulador=0;
-//	for (int i = 0; i < personas.size(); i++) {
-//		 
-//			acumulador=acumulador+1;
 return personas.size();
 	}
-//return acumulador;		
-//}
 
 public int cantidadTrabajando() {
 int acumulador=0;
@@ -52,13 +46,13 @@ return  acumulador;
 
 public void  devolverPersona() {
 	for (int i = 0; i < personas.size(); i++) {
-		 personas.get(i).toString();
+		System.out.println("persona ");
+		System.out.println(personas.get(i).toString());
 				
-				 
-		
+				 		
 	}
 }
 
 
-}
 
+}

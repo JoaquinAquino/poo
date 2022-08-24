@@ -12,8 +12,6 @@ public Persona() {
 	super();
 }
 
-
-
 public Persona(String nombre, int edad, String sexo, boolean estudia, boolean trabaja, boolean permitidoTrabajar,
 		boolean permitidoManejar) {
 	super();
@@ -26,34 +24,24 @@ public Persona(String nombre, int edad, String sexo, boolean estudia, boolean tr
 	this.permitidoManejar = permitidoManejar;
 }
 
-
+public String getNombre() {
+	return nombre;
+}
 
 public boolean isPermitidoTrabajar() {
 	return permitidoTrabajar;
 }
 
-
-
 public void setPermitidoTrabajar(boolean permitidoTrabajar) {
 	this.permitidoTrabajar = permitidoTrabajar;
 }
-
-
 
 public boolean isPermitidoManejar() {
 	return permitidoManejar;
 }
 
-
-
 public void setPermitidoManejar(boolean permitidoManejar) {
 	this.permitidoManejar = permitidoManejar;
-}
-
-
-
-public String getNombre() {
-	return nombre;
 }
 
 public void setNombre(String nombre) {
@@ -116,6 +104,7 @@ public String toString() {
 	return "nombre=" + nombre + ", edad=" + edad + ", sexo=" + sexo + ", estudia=" + estudia + ", trabaja="
 			+ devolverTrabaja() + ", permitidoTrabajar=" + devolverPermitidoTrabajar() + ", permitidoManejar=" + devolverPermitidoManejar() ;
 }
+
 
 
 
