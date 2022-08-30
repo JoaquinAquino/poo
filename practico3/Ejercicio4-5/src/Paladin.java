@@ -27,6 +27,7 @@ public class Paladin extends Personaje {
 				this.setVida(0);
 				//				this.setNivelAtaque(0);
 			}
+			System.out.println("la vida "+this.getNombre()+" es "+this.getVida());
 		}
 		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos+20));
 		if (this.getNivelDefensa()<0) {

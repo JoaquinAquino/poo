@@ -22,8 +22,9 @@ public class Barbaro extends Personaje {
 				System.out.println("el barbaro "+ this.getNombre()+" ha muerto");
 				this.setVida(0);
 			}
-
+			System.out.println("la vida "+this.getNombre()+" es "+this.getVida());
 		}
+
 		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos+20));}
 		if (this.getNivelDefensa()<0) {
 			this.setNivelDefensa(0);			

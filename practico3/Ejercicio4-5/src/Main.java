@@ -24,56 +24,15 @@ Random ran=new Random();
 		luchadores.add(bar3);
 
 		for (int i = 0; i < luchadores.size(); i=i+2) {
-			System.out.println("                   lucha "+i+ ":");
+			System.out.println("                   combate "+i+ ":");
+		Combate combate= new Combate(luchadores.get(i), luchadores.get(i+1));
+		combate.peleas();
 
-			for (int j = 0; j < 3; j++) {			
-				try {
-					if(luchadores.get(i).getVida()==0 || luchadores.get(i+1).getVida()==0 ) {
-						throw new Exception();	 
-					} 
-
-					System.out.println("pelea "+ j);
-					System.out.println("");
-
-					if (ran.nextBoolean()) {
-						System.out.println("ataca primero el barbaro");
-						luchadores.get(i).defender(luchadores.get(i+1).atacar());
-
-						if(luchadores.get(i).getVida()==0) {
-							throw new Exception();	 
-						}
-
-						luchadores.get(i+1).defender(luchadores.get(i).atacar());						
-					}
-					else {
-						System.out.println("ataca primero el paladin");
-						luchadores.get(i+1).defender(luchadores.get(i).atacar());
-
-						if(luchadores.get(i+1).getVida()==0) {
-							throw new Exception();	 
-						}
-
-						luchadores.get(i).defender(luchadores.get(i+1).atacar());
-
-					}
-					System.out.println("vida del paladin "+luchadores.get(i).getVida());
-					System.out.println("vida del barbaro "+luchadores.get(i+1).getVida());	
-					System.out.println("");
-				}
-
-
-				catch(Exception e){
-					System.out.println("vida del paladin "+luchadores.get(i).getVida());
-					System.out.println("vida del barbaro "+luchadores.get(i+1).getVida());	
-					System.out.println("");
-
-				}
-				
-			}
+			
+			
+			
+			
+			
 		}
-
-
-
-
 	}
 }
