@@ -1,18 +1,16 @@
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-Random ran=new Random();
-		Paladin pala1 = new Paladin (70,40,"paladin1");
-		Paladin pala2 = new Paladin (65,45,"paladin2");
-		Paladin pala3 = new Paladin (87,30,"paladin3");
+		Paladin pala1 = new Paladin (20,50,"paladin1");
+		Paladin pala2 = new Paladin (15,45,"paladin2");
+		Paladin pala3 = new Paladin (27,30,"paladin3");
 
-		Barbaro bar1 = new Barbaro(20,60,"barbaro1");
-		Barbaro bar2 = new Barbaro(30,70,"barbaro2");
-		Barbaro bar3 = new Barbaro(25,75,"barbaro3");
+		Barbaro bar1 = new Barbaro(40,20,"barbaro1");
+		Barbaro bar2 = new Barbaro(30,20,"barbaro2");
+		Barbaro bar3 = new Barbaro(25,15,"barbaro3");
 
 		ArrayList<Personaje>luchadores=new ArrayList<>();
 

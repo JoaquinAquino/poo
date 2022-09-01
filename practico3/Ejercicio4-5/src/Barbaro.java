@@ -9,31 +9,20 @@ public class Barbaro extends Personaje {
 	}
 	@Override
 	public void defender(Integer ptos) {
-		if(this.getNivelDefensa()<ptos ) {
-            
-			this.setVida(this.getVida()- ((ptos+20)-this.getNivelDefensa()));
-			this.setNivelDefensa(0);
-			try {
-				if (this.getVida()<=0) {
-					throw new Exception();	
-				}
-			}
-			catch(Exception e) {
-				System.out.println("el barbaro "+ this.getNombre()+" ha muerto");
-				this.setVida(0);
-			}
-			System.out.println("la vida "+this.getNombre()+" es "+this.getVida());
+		ptos=ptos+20;
+		if(this.getNivelDefensa()<=ptos ) {
+        
+			this.setVida(this.getVida()- ((ptos)-this.getNivelDefensa()));
+		
+			
 		}
 
-		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos+20));}
-		if (this.getNivelDefensa()<0) {
-			this.setNivelDefensa(0);			
-		}
-		System.out.println("el nivel de defensa de "+this.getNombre()+ " ha bajado "+ (ptos+20)+ " puntos"+"-------"+" defensa restante="+this.getNivelDefensa());
+		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos));}
 	}
 
 
 	public Integer atacar() {
+		System.out.println(this.nombre+" ha atacado con "+super.atacar()*3+" de daño" );
 		return super.atacar()*3;
 
 	}

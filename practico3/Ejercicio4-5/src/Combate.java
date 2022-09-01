@@ -18,19 +18,19 @@ public Combate(Personaje guerrero1, Personaje guerrero2) {
 
 public void peleas() {
 	Random ran= new Random();
-	while (guerrero1.getVida()!=0 || guerrero2.getVida()!=0) {
+	while (guerrero1.getVida()>0 || guerrero2.getVida()>0) {
 			
 		if (ran.nextBoolean()) {
-			System.out.println("ataca  "+ guerrero2.getNombre());
 			ataca(guerrero1,guerrero2);
-			
-			//ataca(guerrero2,guerrero1);
+			System.out.println("la vida de "+guerrero1.getNombre()+" es "+guerrero1.getVida());
+			System.out.println("la defensa es "+guerrero1.getNombre()+ " es"+guerrero1.getNivelDefensa());
 
 		}
 		else {
-			System.out.println("ataca  "+ guerrero1.getNombre());
-			ataca(guerrero2,guerrero1);
-			//ataca(guerrero1,guerrero2);				
+			ataca(guerrero2,guerrero1);	
+			System.out.println("la vida de "+guerrero2.getNombre()+" es "+guerrero2.getVida());
+			System.out.println("la defensa es "+guerrero2.getNombre()+ " es"+guerrero2.getNivelDefensa());
+
 		}		
 	}
 }
