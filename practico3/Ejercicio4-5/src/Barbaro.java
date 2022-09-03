@@ -9,21 +9,15 @@ public class Barbaro extends Personaje {
 	}
 	@Override
 	public void defender(Integer ptos) {
-		ptos=ptos+20;
-		if(this.getNivelDefensa()<=ptos ) {
-        
-			this.setVida(this.getVida()- ((ptos)-this.getNivelDefensa()));
-		
-			
-		}
-
-		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos));}
+		ptos=ptos+20;    
+			this.setVida(this.getVida()- (ptos-this.getNivelDefensa()));	
 	}
 
 
+
 	public Integer atacar() {
-		System.out.println(this.nombre+" ha atacado con "+super.atacar()*3+" de daño" );
-		return super.atacar()*3;
+		System.out.println(this.nombre+" ha atacado con "+this.nivelAtaque*2+" de daño" );
+		return this.nivelAtaque*2;
 
 	}
 }

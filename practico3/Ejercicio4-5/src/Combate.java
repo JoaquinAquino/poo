@@ -18,28 +18,30 @@ public Combate(Personaje guerrero1, Personaje guerrero2) {
 
 public void peleas() {
 	Random ran= new Random();
-	while (guerrero1.getVida()>0 || guerrero2.getVida()>0) {
-			
+
+	while (true) {
+
 		if (ran.nextBoolean()) {
-			ataca(guerrero1,guerrero2);
-			System.out.println("la vida de "+guerrero1.getNombre()+" es "+guerrero1.getVida());
+			guerrero1.defender(guerrero2.atacar());	
+			System.out.println("");
 			System.out.println("la defensa es "+guerrero1.getNombre()+ " es"+guerrero1.getNivelDefensa());
+			System.out.println("la vida de "+guerrero1.getNombre()+" es "+guerrero1.getVida());
+			System.out.println("");
 
 		}
-		else {
-			ataca(guerrero2,guerrero1);	
-			System.out.println("la vida de "+guerrero2.getNombre()+" es "+guerrero2.getVida());
+		else {	
+			guerrero2.defender(guerrero1.atacar());	
+			System.out.println("");
 			System.out.println("la defensa es "+guerrero2.getNombre()+ " es"+guerrero2.getNivelDefensa());
+			System.out.println("la vida de "+guerrero2.getNombre()+" es "+guerrero2.getVida());
+			System.out.println("");
 
-		}		
-	}
-}
-
-
-private void ataca(Personaje guerrero1, Personaje guerrero2) {
-		guerrero1.defender(guerrero2.atacar());					 
 		}	
+		if (guerrero1.getVida()==0 || guerrero2.getVida()==0) {
+			break;}
 	}
+ }
+}
 
 
 

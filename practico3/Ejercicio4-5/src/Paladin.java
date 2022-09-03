@@ -16,11 +16,8 @@ public class Paladin extends Personaje {
 		// TODO Auto-generated method stub	
 		
 		if(this.getNivelDefensa()<=ptos ) {
-			this.setVida(this.getVida()- ((ptos)-this.getNivelDefensa()));	
-	        this.setNivelDefensa(0);
-			System.out.println("la vida "+this.getNombre()+" es "+this.getVida());
-		}
-		else { this.setNivelDefensa(this.getNivelDefensa()-(ptos));		
-}       
+			
+			this.setVida(this.getVida()- ((ptos-this.getNivelDefensa())/2));	
+		}      
 	}
 }

@@ -2,13 +2,7 @@
 
 public abstract class  Personaje {
 
-	public String getNombre() {
-		return nombre;
-	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 	protected Integer vida=100;
 	protected Integer nivelAtaque;
 	protected Integer nivelDefensa;
@@ -16,7 +10,7 @@ public abstract class  Personaje {
 
 
 	public Integer atacar() {
-//		System.out.println(this.nombre+" ha atacado con "+this.atacar()+" de  daño");
+		System.out.println(this.nombre+" ha atacado con "+this.getNivelAtaque()+" de  daño");
 		return this.nivelAtaque;}
 
 	public abstract void defender(Integer ptos);
@@ -28,18 +22,26 @@ public abstract class  Personaje {
 	public void setVida(Integer vida) {
 		try {
 			if (vida<=0) {
-				throw new Exception("el personaje "+ this.nombre+ "ha muerto.");
-			}else {
+				throw new Exception();
+			}else {			
 				this.vida=vida;
 			}
 		}
+		
 		catch(Exception e) {
 			this.vida=0;
+			System.out.println("");
+			System.out.println("el personaje "+ this.nombre+ " ha muerto.");
 		}	
-		this.vida=vida;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	public Integer getNivelAtaque() {
 		return nivelAtaque;
 	}
