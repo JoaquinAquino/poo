@@ -20,8 +20,8 @@ this.vista.setVisible(true);
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(getVista().getBtnAcetpar())) {
-String Archivo= getVista().getDireccionArchivo().getText();
-String direccionaGuardar= getVista().getDireccionAGuardar().getText();
+			String Archivo= getVista().getDireccionArchivo().getText();
+			String direccionaGuardar= getVista().getDireccionAGuardar().getText();
 
 			
 		};
