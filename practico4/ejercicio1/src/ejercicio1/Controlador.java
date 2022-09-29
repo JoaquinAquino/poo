@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import Vista;
+
 public class Controlador implements ActionListener {
 	private Vista vista;
 
@@ -16,7 +18,7 @@ this.vista.setVisible(true);
 	}
 
 
-	@Override
+	
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(getVista().getBtnAcetpar1())) {

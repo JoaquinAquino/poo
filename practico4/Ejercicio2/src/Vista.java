@@ -17,9 +17,9 @@ public class Vista extends JFrame {
 
 	private JPanel contentPane;
 	private Controlador controlador;
-	private JButton btnAceptar;
+	private JButton btnGuardar;
 	private JTextField direccionArchivo;
-	private JTextField direccionAGuardar;
+	private JButton btnSeleccionar;
 
 
 
@@ -38,8 +38,15 @@ public class Vista extends JFrame {
 		panel.setBackground(Color.WHITE);
 		contentPane.add(panel, BorderLayout.SOUTH);
 		
-		btnAceptar = new JButton("aceptar");
-		panel.add(btnAceptar);
+		btnGuardar = new JButton("guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
+		btnSeleccionar = new JButton("seleccionar");
+		panel.add(btnSeleccionar);
+		panel.add(btnGuardar);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
@@ -47,22 +54,13 @@ public class Vista extends JFrame {
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("ingrese el archivo");
-		lblNewLabel.setBounds(10, 11, 110, 24);
+		lblNewLabel.setBounds(148, 51, 110, 24);
 		panel_1.add(lblNewLabel);
 		
 		direccionArchivo = new JTextField();
-		direccionArchivo.setBounds(130, 13, 271, 20);
+		direccionArchivo.setBounds(78, 86, 271, 20);
 		panel_1.add(direccionArchivo);
 		direccionArchivo.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("ingrese la ubicacion");
-		lblNewLabel_1.setBounds(10, 131, 110, 14);
-		panel_1.add(lblNewLabel_1);
-		
-		direccionAGuardar = new JTextField();
-		direccionAGuardar.setBounds(130, 128, 271, 20);
-		panel_1.add(direccionAGuardar);
-		direccionAGuardar.setColumns(10);
 		
 		
 	}
@@ -79,17 +77,20 @@ public class Vista extends JFrame {
 		this.controlador = controlador;
 	}
 
-	public JButton getBtnAcetpar() {
-		return btnAceptar;
+	public JButton getBtnGuardar() {
+		return btnGuardar;
 	}
 	
 	public JTextField getDireccionArchivo() {
 		return direccionArchivo;
 	}
 
-	public JTextField getDireccionAGuardar() {
-		return direccionAGuardar;
+
+	public JButton getBtnSeleccionar() {
+		return btnSeleccionar;
 	}
+
+	
 
 	
 }

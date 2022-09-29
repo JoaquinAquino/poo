@@ -1,5 +1,6 @@
 package ejercicio1;
 
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
