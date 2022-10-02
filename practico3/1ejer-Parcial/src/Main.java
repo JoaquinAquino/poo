@@ -16,7 +16,7 @@ public class Main {
 		for (int i = 0; i < 20; i++) {
 			nombres.add("nombre"+i);			
 		}
-		
+	
 		for (int i = 0; i <new Random().nextInt(1,10); i++) {	
         Familia familia= new Familia(apellidos.get(new Random().nextInt(20))); 
 			for (int j = 0; j < new Random().nextInt(1,5); j++) {			
