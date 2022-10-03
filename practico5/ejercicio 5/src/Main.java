@@ -4,6 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DirectorCocina cocina= new DirectorCocina(); //director
+		//q pasa si no se instancian
 		TortaBuilder tortaCoco= new TortaCoco();
 		TortaBuilder tortaChocolate= new TortaChocolate();
 		TortaBuilder tortaVainilla= new TortaVainilla();
