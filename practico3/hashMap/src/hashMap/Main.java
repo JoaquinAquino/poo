@@ -38,12 +38,10 @@ public class Main {
 //		}
 
 for (int i = 0; i < new Random().nextInt(3, 5); i++) {
-	Familia familia= new Familia("apellido"+i);
-	
-	for (int j = 0; j < new Random().nextInt(1, 4); j++) {
-		
-		Persona persona= new Persona("nombre"+j,new Random().nextInt(1,49)) ;
-		familia.agregarPersonas(""+j, persona);		
+	Familia familia= new Familia("apellido"+i);	
+	for (int j = 0; j < new Random().nextInt(1, 4); j++) {		
+//		Persona persona= ) ;
+		familia.agregarPersonas(""+j, new Persona("nombre"+j,new Random().nextInt(1,49)));		
 	}
 	familias.put(""+i, familia);	
 }

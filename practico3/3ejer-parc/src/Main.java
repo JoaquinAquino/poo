@@ -42,6 +42,7 @@ public class Main {
 
 			obras.addAll(serie.getTemporadas().get(i).getEpisodios());
 		}
+		
 		obras.addAll(peliculas);
 		
 		obras.sort(Comparator.comparing(x -> x.getCalificacion()));
