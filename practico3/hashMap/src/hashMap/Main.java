@@ -1,6 +1,7 @@
 package hashMap;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.Map.Entry;
 
@@ -9,7 +10,21 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		
+  //  enteros		
+//		Map <String, Familia> sd= new HashMap<String, Familia>();
+//		
+//		//iterating over keys only
+//	    for (Integer key : sd.keySet()) {
+//	        System.out.println("Key = " + key);
+//	    }
+//
+//	//iterando solo sobre valores
+//	for (Integer value : sd.values()) {
+//	    System.out.println("Value = " + value);
+//	}
+	
+	
+//-------------------------------------------------------------------------------------	
 	
 		HashMap <String, Familia> familias= new HashMap<String, Familia>();
 //		
@@ -47,13 +62,28 @@ for (int i = 0; i < new Random().nextInt(3, 5); i++) {
 }
 
 for (Entry<String,Familia> fam : familias.entrySet()) {
+	
 //	System.out.println("clave: "+fam.getKey());
 //	System.out.println(fam.getValue());	//sin claves
 }
 
-for (int i = 0; i < 2; i++) {
-	System.out.println(familias.get(""+i).toString());
-}
+//for (int i = 0; i < 2; i++) {
+//	System.out.println(familias.get(""+i).toString());
+//}
+
+System.out.println(familias.get(""+1)); // si colocas get(key) obtenes lo q hay adentrio
+System.out.println(familias.get(""+1)); // si colocas get(key) obtenes lo q hay adentrio
+System.out.println("");
+
+System.out.println(familias.containsKey(""+1));//verifica si se encuentra una key 
+System.out.println(familias.containsValue(familias.get(""+1)));//verifica si se encuentra una valor 
+
+
+
+
+
+
+
 
 //https://www.delftstack.com/es/howto/java/sort-a-hashmap-java/#:~:text=Usando%20las%20teclas%2C%20podemos%20ordenar,los%20traducimos%20en%20una%20lista. ordenar
 // System.out.println(familias);	
