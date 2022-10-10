@@ -5,6 +5,7 @@ public class Argentina implements Formateo {
 	public String formatearMoneda(Double cantidad) {
 		return cantidad*290+ " ARS";
 	}
+	
 
 	@Override
 	public String formaterFecha(String dia, String mes, String año) {
