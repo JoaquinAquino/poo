@@ -1,18 +1,23 @@
-import java.text.DecimalFormat;
-
-public abstract class Producto {
-private String precio;
-private DecimalFormat formato1 = new DecimalFormat("#.00");
 
 
-public Producto(String precio) {
-	super();
-	this.precio =formato1.format(precio);
-}
+public  class Producto implements Imoneda {
+	private String precio;
 
-public String getPrecio() {	
-	return precio;
-}
+
+	public Producto(String precio) {
+		super();
+		this.precio =precio;
+	}
+
+	@Override
+	public void getPrecio(Producto p) {
+      System.out.println(p.precio);		
+	}
+
+	public String getPrecio() {
+		return precio;
+	}
+
 
 
 }

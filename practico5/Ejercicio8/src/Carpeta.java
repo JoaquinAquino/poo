@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 
 public class Carpeta extends ElementoBase{
+	
 protected ArrayList<Elemento> hijos = new ArrayList<Elemento>();
 
 	public Carpeta(String nombre,Elemento... elemento) {
@@ -11,11 +12,11 @@ protected ArrayList<Elemento> hijos = new ArrayList<Elemento>();
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public boolean isCompuesto() {
-		return true;
-	}
-	
+//	@Override
+//	public boolean isCompuesto() {
+//		return true;
+//	}
+//	
 	public void add(Elemento... e) {
 		hijos.addAll(Arrays.asList(e));
 //		hijos.add(e);		

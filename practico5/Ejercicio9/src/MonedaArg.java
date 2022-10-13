@@ -8,9 +8,8 @@ public class MonedaArg extends MonedaDecorador{
 
 	@Override
 	public  void getPrecio(Producto p) {
-		imoneda.getPrecio(p);
-		getLineDescription();
-				
+		imoneda.getPrecio(p);;
+		getLineDescription();				
 	}
 
 	@Override

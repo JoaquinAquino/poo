@@ -16,7 +16,7 @@ public ElementoBase(String nombre) {
 public String getNombre() {	
 	return nombre;
 }
-public abstract boolean isCompuesto();
+//public abstract boolean isCompuesto();
 public abstract void imprimir();//esta bien poner abstracto?
 
 }

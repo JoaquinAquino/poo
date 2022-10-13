@@ -6,14 +6,14 @@ public class Archivo extends ElementoBase{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public boolean isCompuesto() {
-		return false;
-	}
+//	@Override
+//	public boolean isCompuesto() {
+//		return false;
+//	}
 
 	@Override
 	public void imprimir() {
-		System.out.println(acumulador+ this.getNombre());		
+		System.out.println(acumulador+ super.getNombre());		
 	}
 
 }

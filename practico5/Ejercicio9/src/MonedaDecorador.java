@@ -9,7 +9,9 @@ public abstract class MonedaDecorador implements Imoneda{
 
 	@Override
 	public void getPrecio(Producto p) {
-		imoneda.getPrecio(p);	
+		 imoneda.getPrecio(p);	
 		}
+	
+	public abstract void getLineDescription(); 
 	
 }
