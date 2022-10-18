@@ -6,7 +6,7 @@ public class Incrementar {
 		numero++;
 	}
 
-	public synchronized Integer getNumero() {
+	public  Integer getNumero() {
 		return numero;
 	}
 	
