@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class Servidor {
-	private LinkedList<PaqueteDatos> colaPaquetes;
+	private LinkedList<PaqueteDatos> colaPaquetes= new LinkedList<PaqueteDatos>();
 
 	public synchronized void almacenar(PaqueteDatos unPaquete) {
 		while(colaPaquetes.size()>3) {
@@ -16,14 +16,14 @@ public class Servidor {
 		if(unPaquete != null) {
 			System.out.println("Almaceno: "+ unPaquete.toString());
 		}
-			colaPaquetes.add(unPaquete);
+			colaPaquetes.add(unPaquete);// se manda un null para q se corte
 			notifyAll();				
 	}
 	
 	
 	public synchronized PaqueteDatos consultar() {
 		
-		while(colaPaquetes.size()==0) {
+		while(colaPaquetes.isEmpty()) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -31,13 +31,13 @@ public class Servidor {
 				e.printStackTrace();
 			}
 		}
-			PaqueteDatos unPaquete= colaPaquetes.removeFirst();
-			if(unPaquete != null) {
-				System.out.println("remuevo: "+ unPaquete.toString());
+			PaqueteDatos Paquete= colaPaquetes.removeFirst();
+			if(Paquete != null) {
+				System.out.println("remuevo: "+ Paquete.toString());
 			}
 			notifyAll();
 		
 		
-		return unPaquete;
+		return Paquete;
 	}
 }
