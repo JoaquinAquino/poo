@@ -17,28 +17,41 @@ public Boya(String nombre, Servidor servidor) {
 	this.anemometro = new Anemometro();
 }
 
-@Override
+
 public void run() {
 	for (int i = 0; i < 5; i++) {
-		try {
-			enviar(generarPaquete());
-		}catch(ErrorComunicacion e ){
-			System.out.println("ERROR:"+ nombre +"Hubo una falla en la comunicación, se perdió el paquete");	
-		}
-
+			try {
+				enviar(generarPaquete());
+			} catch (ErrorComunicacion e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
+				
 	}
-
+	this.servidor.almacenar(null);
+	System.out.println("finaliza boya");
 }
 
-public void enviar(PaqueteDatos paquete) throws ErrorComunicacion {
-	if( new Random().nextInt(100)<40) {
-		throw new ErrorComunicacion();
+
+	public void enviar(PaqueteDatos paquete)  {
+    try {
+		Thread.sleep(2000);
+		
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
-	servidor.almacenar(paquete);
+    servidor.almacenar(paquete);
+ //ver si funciona
 }
 
-public PaqueteDatos generarPaquete() {
+
+
+public PaqueteDatos generarPaquete() throws ErrorComunicacion  {	
+	if( new Random().nextInt(10)<=4) {
+		throw new ErrorComunicacion("ERROR:"+ nombre +"Hubo una falla en la comunicación, se perdió el paquete");
+	
+	}
 	return new PaqueteDatos(nombre,termometro.sensar(),anemometro.sensar(),System.currentTimeMillis());
-	}
-
+}
 }
