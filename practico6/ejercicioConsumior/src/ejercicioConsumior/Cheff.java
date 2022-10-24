@@ -12,7 +12,7 @@ public class Cheff implements Runnable{
 	}
 
 	@Override
-	public void run() {
+	public void run(){
 
 		for(int i=0;i<5;i++) {//el cheff hace 5 platos
 			try {
@@ -21,11 +21,15 @@ public class Cheff implements Runnable{
 				e.printStackTrace();
 			}
 			Plato plato= new Plato(new Random().nextInt(95)+5,"plato"+i);
-			//aca iria la excepcion si se le cae los platos al cheff			
+//			if(new Random().nextInt(10)<=4) {
+//				throw new CaerPlatos("se ha caido un plato");
+//			}			
 			this.pedidos.ingresar(plato);
 			
 		}
 		pedidos.ingresar(null); // ser 
 	}
+	
+	
 
 }
